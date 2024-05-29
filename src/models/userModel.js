@@ -1,61 +1,64 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema();
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const userSchema = new Schema({
-	profile-fname:{
-		type: String,
-		required: true
-	},
-	profile-sname:{
-		type: String,
-		required: true
-	},
-	profile-email:{
-		type: String,
-		required: true
-	},
-	profile-date-of-birth:{
-		type: Array,
-		required: true,
-		default: []
-	}
-	profile-genre:{
-		type: String,
-		required: true
-	},
-	profile-pic:{
-		type: String,
-		required: false
-	},
-	profile-frontpic:{
-		type: String,
-		required: false
-	},
-	profile-alias:{
-		type: String,
-		required: true
-	},
-	profile-details:{
-		type: Array,
-		required: false,
-		default: []
-	},	qx
-	profile-ubication:{
-		type: Array,
-		required: false,
-		default: []
-	},
-	profile-friends:{
-		type: Array,
-		required: false,
-		default: [] 
-	},
-	profile-accept-friendreq:{
-		type: Boolean,
-		required: false,
-		default: false
-	}
+  profileFName: {
+    type: String,
+    required: true
+  },
+  profileSName: {
+    type: String,
+    required: true
+  },
+  profileEmail: {
+    type: String,
+    required: true
+  },
+  profilePassword:{
+  	type: String,
+  	required: true
+  },
+  profileDateOfBirth: {
+    type: Array,
+    required: true,
+    default: []
+  },
+  profileGenre: {
+    type: String,
+    required: true
+  },
+  profilePic: {
+    type: String,
+    required: false
+  },
+  profileFrontPic: {
+    type: String,
+    required: false
+  },
+  profileAlias: {
+    type: String,
+    required: true
+  },
+  profileDetails: {
+    type: Array,
+    required: false,
+    default: []
+  },
+  profileUbication: {
+    type: Array,
+    required: false,
+    default: []
+  },
+  profileFriends: {
+    type: Array,
+    required: false,
+    default: []
+  },
+  profileAcceptFriendReq: {
+    type: Boolean,
+    required: false,
+    default: false
+  }
 });
 
-const User = mongoose.model("User", userSchema);
-module.exports = User;
+export default mongoose.model('User', userSchema);
