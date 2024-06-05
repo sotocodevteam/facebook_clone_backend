@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/", UserRoute);
+app.use("/facebook/users", UserRoute);
 
 //Conectando base de datos.
 connectdb();
