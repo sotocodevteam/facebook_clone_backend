@@ -1,12 +1,11 @@
 import { Router } from "express";
+import {getAllUser, getUser, createUser, updateUser, deleteUser} from '../controllers/userController.js';
 
 const route = Router()
 
-route.get('/', (req, res) => {
-  return res.status(200).json({
-    ok: true,
-    message: "Hola ruta"
-  })
-})
+route.route('/').get(getAllUser).post(createUser)
+
+route.route('/:id').get(getUser).put(updateUser).delete(deleteUser);
+
 
 export default route;
