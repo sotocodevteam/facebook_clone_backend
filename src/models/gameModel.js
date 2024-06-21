@@ -1,4 +1,4 @@
-const {Schema,model} = require('mongoose');
+import {Schema,model} from 'mongoose';
 
 const gameModel= new Schema({
   typesGame :{
@@ -14,9 +14,8 @@ const gameModel= new Schema({
     default : 0
   },
   imageGame:{
-    type: string,
+    type: String,
     required: true
   }
 })
-
-module.exports = model('gameModel',gameModel)
+export default model('gameModel',gameModel);
