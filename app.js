@@ -1,13 +1,13 @@
-import express from "express";
-import cors from "cors";
-import UserRoute from "./src/routes/UserRoute.js";
-import connectdb from "./conection.js";
+import express from 'express';
+import cors from 'cors';
+import UserRoute from './src/routes/UserRoute.js';
+import connectdb from './conection.js';
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/", UserRoute);
+app.use('/', UserRoute);
 
 //Conectando base de datos.
 connectdb();
